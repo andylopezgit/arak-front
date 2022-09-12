@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Registro de Nuevo Usuario</h1>
+<div mat-dialog-content>
+  <mat-spinner diameter="80" class="spinner" *ngIf="loading"></mat-spinner>
+    <form [formGroup]="form" class="login-form" (ngSubmit)="addUser()" *ngIf="!loading">
+        <mat-form-field class="login-full-width" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Andres" value="" autocomplete="off" formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="login-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="andres@mail.com" value="" autocomplete="off" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="login-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="supersecret" value="" autocomplete="off" formControlName="password">
+        </mat-form-field>
+        <div mat-dialog-actions class="btn">
+          <button mat-button mat-dialog-close>Cancelar</button>
+          <button type="submit" mat-raised-button class="button" color="primary" [mat-dialog-close]="true">Registrar</button>
+        </div>
+      </form>
+</div>
+

@@ -1,0 +1,113 @@
+.container {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: (1fr, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.one {
+  grid-column: 1;
+}
+
+.two {
+  grid-column: 2;
+}
+/* .three {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+} 
+*/
+
+.host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.formL {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.toolName {
+  height: 80px;
+  padding: 1rem;
+  background-color: rgba(25, 140, 132, 0.2) !important;
+}
+
+.fill {
+  height: 30px;
+  padding: 1rem;
+  background-color: rgba(25, 140, 132, 0.2) !important;
+  color: black;
+}
+
+.fill input {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.694);
+}
+.btnEdit {
+  width: 100%;
+  height: 50px;
+}
+
+.formRepair {
+  display: flex;
+  width: 100%;
+}
+
+.three {
+  display: flex;
+}
+
+.threeCard,
+.oneCard {
+  margin-top: 10px;
+}
+
+.forFlex {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.itemFor {
+  width: 100%;
+}
+
+/* @media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .one {
+    grid-column: 1;
+  }
+  .two {
+    grid-column: 1;
+    display: flex;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .three {
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+} */

@@ -1,0 +1,51 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.form-login {
+  min-width: 150px;
+  max-width: 400px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+  background-color: rgb(16, 123, 156);
+  color: white;
+  height: 50px;
+  font-size: 18px;
+}
+
+.nameLogo {
+  margin: 0;
+  font-weight: 800;
+  color: rgb(25, 140, 132)
+}
+
+.spinner {
+  margin-top: 20px;
+}
+
+.register {
+  text-align: right;
+  margin-top: 5px !important;
+  color: rgb(25, 140, 132);
+  font-weight: 800;
+}
+
+.footBtn{
+
+  justify-content: space-between;
+  padding: 5px 10px 5px 10px;
+  margin-top: 10px;
+}
