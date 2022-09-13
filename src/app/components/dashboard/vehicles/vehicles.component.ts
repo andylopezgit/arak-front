@@ -29,6 +29,8 @@ export class VehiclesComponent implements OnInit {
 
   displayedColumns: string[] = this.colum;
   dataSource: any;
+  filter: any;
+  order: any;
 
   constructor(
     private http: HttpClient,
@@ -109,5 +111,23 @@ export class VehiclesComponent implements OnInit {
   goToDetail(id: any) {
     this.vehicleService.setIdVehicle(id);
     this.router.navigate(['dashboard/detailVehicle']);
+  }
+
+  filterByname() {
+    this.dataSource = this.dataSource.filter((item: any) => {
+      console.log(item.brand);
+      return item.brand === 'Ford';
+    });
+    console.log(this.dataSource);
+  }
+
+  orderBy() {
+    console.log(this.dataSource);
+    const algo: any[] = [];
+    this.dataSource.sort((a: any, b: any) => {
+      algo.push(b.brand < a.brand);
+      return algo;
+    });
+    this.dataSource = algo;
   }
 }

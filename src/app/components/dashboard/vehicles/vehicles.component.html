@@ -13,6 +13,18 @@
 
   <section class="layout">
     <!-- Vehicle Table is loaded with endpoint -->
+    <div class="filter">
+      <input type="text" [(ngModel)]="filter" /><button
+        (click)="filterByname()"
+      >
+        Filtrar</button
+      >{{ filter }} <input type="text" [(ngModel)]="order" /><button
+        (click)="orderBy()"
+      >
+        Ordenar
+      </button>
+      {{ order }}
+    </div>
     <table
       mat-table
       [dataSource]="dataSource"
