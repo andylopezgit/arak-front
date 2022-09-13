@@ -15,24 +15,23 @@
     <!-- Vehicle Table is loaded with endpoint -->
     <div class="filter">
       <input type="text" [(ngModel)]="filter" /><button
-        (click)="filterByname()"
+        (click)="filterByname(filter)"
       >
         Filtrar</button
-      >{{ filter }} <input type="text" [(ngModel)]="order" /><button
-        (click)="orderBy()"
-      >
+      ><button (click)="resetFilter()">Eliminar filtro</button
+      ><input type="text" [(ngModel)]="order" /><button (click)="orderBy()">
         Ordenar
       </button>
-      {{ order }}
     </div>
     <table
       mat-table
       [dataSource]="dataSource"
       class="mat-elevation-z9 elementos"
+      matSort
     >
       <!-- Type Column -->
       <ng-container matColumnDef="typeId">
-        <th mat-header-cell *matHeaderCellDef>Tipo</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</th>
         <td mat-cell *matCellDef="let element">
           <span [ngSwitch]="element.type_id">
             <span *ngSwitchCase="1">{{ "Moto" }}</span>
@@ -47,13 +46,13 @@
 
       <!-- Brand Column -->
       <ng-container matColumnDef="brand">
-        <th mat-header-cell *matHeaderCellDef>Marca</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Marca</th>
         <td mat-cell *matCellDef="let vehicle">{{ vehicle.brand }}</td>
       </ng-container>
 
       <!-- Model Column -->
       <ng-container matColumnDef="model">
-        <th mat-header-cell *matHeaderCellDef>Modelo</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Modelo</th>
         <td mat-cell *matCellDef="let element">{{ element.model }}</td>
       </ng-container>
 
