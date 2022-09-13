@@ -18,7 +18,7 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './vehicles.component.html',
   styleUrls: ['./vehicles.component.css'],
 })
-export class VehiclesComponent implements OnInit, AfterViewInit {
+export class VehiclesComponent implements OnInit /* AfterViewInit */ {
   @ViewChild(MatSort) sort?: MatSort;
 
   suscription?: Subscription;
@@ -75,13 +75,14 @@ export class VehiclesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
+  /* ngAfterViewInit() {
     this.dataSource.sort = this.sort;
-  }
+  } */
 
   getVehicleByUser() {
     this.vehicleService.getVehicleByUser().subscribe((res: any) => {
-      this.dataSource = res.body.content;
+      this.dataSourceGet = res.body.content;
+      return (this.dataSource = this.dataSourceGet);
     });
   }
 
@@ -133,7 +134,7 @@ export class VehiclesComponent implements OnInit, AfterViewInit {
   filterByname(brand: any) {
     let dataSourceFiltered;
     dataSourceFiltered = this.dataSource.filter((item: any) => {
-      return item.brand == brand;
+      return item.brand.toLowerCase() == brand.toLowerCase();
     });
     return (this.dataSource = dataSourceFiltered);
   }
@@ -144,10 +145,10 @@ export class VehiclesComponent implements OnInit, AfterViewInit {
   }
 
   SortArray(x: any, y: any) {
-    if (x.model < y.model) {
+    if (x.brand.toLowerCase() > y.brand.toLowerCase()) {
       return -1;
     }
-    if (x.model > y.model) {
+    if (x.brand.toLowerCase() < y.brand.toLowerCase()) {
       return 1;
     }
     return 0;

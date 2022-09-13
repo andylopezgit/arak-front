@@ -16,12 +16,12 @@
     <div class="filter">
       <input type="text" [(ngModel)]="filter" /><button
         (click)="filterByname(filter)"
+        class="btnFilter"
       >
         Filtrar</button
-      ><button (click)="resetFilter()">Eliminar filtro</button
-      ><input type="text" [(ngModel)]="order" /><button (click)="orderBy()">
-        Ordenar
-      </button>
+      ><button (click)="resetFilter()" class="btnDelFilter">
+        Eliminar filtro</button
+      ><button (click)="orderBy()" class="btnOrder">Ordenar</button>
     </div>
     <table
       mat-table
